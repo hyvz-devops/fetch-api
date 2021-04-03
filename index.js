@@ -1,15 +1,15 @@
 document.getElementById('fetchUserDataBtn').addEventListener('click', fetchUserData);
 
         function fetchUserData(){
-            fetch('https://jsonplaceholder.typicode.com/posts')
+            fetch('https://my-json-server.typicode.com/typicode/demo/comments')
                 .then(response => response.json())
-                .then(posts => {
+                .then(comments => {
                     let output = '<h2>Lists of Users</h2>';
                     output += '<ul>';
-                    posts.forEach(function(post) {
+                    comments.forEach(function(comment) {
                         output += `
                             <li>
-                                ${post.title}
+                                ${comment.body}
                             </li>
                         `;
                     });
